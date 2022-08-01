@@ -26,7 +26,7 @@ touch Podfile
 ```
 pod install 
 ```
-###Output
+### Output
 ```
 Last login: Mon Aug  1 13:51:56 on ttys000
 user@Islomjons-MacBook-Pro ~ % cd /Users/user/Desktop/iOS\ Lessons/CoronavirusAPI
