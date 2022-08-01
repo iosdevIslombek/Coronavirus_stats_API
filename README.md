@@ -28,9 +28,6 @@ pod install
 ```
 ### Output
 ```
-Last login: Mon Aug  1 13:51:56 on ttys000
-user@Islomjons-MacBook-Pro ~ % cd /Users/user/Desktop/iOS\ Lessons/CoronavirusAPI
-user@Islomjons-MacBook-Pro CoronavirusAPI % pod install
 Analyzing dependencies
 Downloading dependencies
 Installing Alamofire (5.6.2)
@@ -45,7 +42,6 @@ Integrating client project
 Pod installation complete! There are 5 dependencies from the Podfile and 5 total pods installed.
 
 [!] Automatically assigning platform `iOS` with version `13.0` on target `CoronavirusAPI` because no platform was specified. Please specify a platform for this target in your Podfile. See `https://guides.cocoapods.org/syntax/podfile.html#platform`.
-user@Islomjons-MacBook-Pro CoronavirusAPI % 
 
 ```
 * The last command is in charge of create project the dependencies and new Workspace to work on Xcode.
