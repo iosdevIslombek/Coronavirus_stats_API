@@ -296,7 +296,7 @@
                                                             </subviews>
                                                         </stackView>
                                                     </subviews>
-                                                    <color key="backgroundColor" red="0.99607843137254903" green="1" blue="0.5490196078431373" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                    <color key="backgroundColor" systemColor="systemYellowColor"/>
                                                     <constraints>
                                                         <constraint firstItem="15B-y8-lyF" firstAttribute="leading" secondItem="ZJd-8c-aNj" secondAttribute="leading" constant="4" id="Eu9-Jb-Qjq"/>
                                                         <constraint firstAttribute="bottom" secondItem="15B-y8-lyF" secondAttribute="bottom" constant="4" id="jua-Tv-OYq"/>
@@ -330,7 +330,7 @@
                                                             </subviews>
                                                         </stackView>
                                                     </subviews>
-                                                    <color key="backgroundColor" red="0.99774247410000005" green="0.99775129559999998" blue="0.54922672576462594" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                    <color key="backgroundColor" systemColor="systemYellowColor"/>
                                                     <constraints>
                                                         <constraint firstItem="iSG-c9-lrt" firstAttribute="top" secondItem="bEp-H6-0p2" secondAttribute="top" constant="4" id="2Ey-WZ-yGl"/>
                                                         <constraint firstItem="iSG-c9-lrt" firstAttribute="leading" secondItem="bEp-H6-0p2" secondAttribute="leading" constant="4" id="DSb-xD-GQS"/>
@@ -441,6 +441,9 @@
     <resources>
         <systemColor name="systemGreenColor">
             <color red="0.20392156862745098" green="0.7803921568627451" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemYellowColor">
+            <color red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

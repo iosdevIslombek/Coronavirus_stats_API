@@ -9,12 +9,15 @@ import UIKit
 import Alamofire
 import SwiftyJSON
 import SnapKit
+import Lottie
 
 class StatisticsVC: UIViewController {
     
     var regions:[RegionDM] = []
     var allRegion: [RegionDM] = []
     var totalReport:[TotalReportDM] = []
+    
+    let animationView = AnimationView()
     
     let headerView: UIView = {
        let view = UIView()
@@ -236,11 +239,12 @@ class StatisticsVC: UIViewController {
         
         let formatter = DateFormatter()
         formatter.dateFormat = "yyyy-MM-dd"
-        let date = formatter.string(from: Calendar.current.date(byAdding: .day, value: -1, to: Date())!)        
+        let date = formatter.string(from: Calendar.current.date(byAdding: .day, value: -1, to: Date())!)
         getTotalReport(date: date)
         navBar()
         getData()
         setHeaderUI()
+        tableView.startAnimation(name: "global")
     }
     
     func getTotalReport(date:String){
@@ -250,12 +254,12 @@ class StatisticsVC: UIViewController {
             ]
             AF.request(Url.totalReports, method: .get, parameters: params, headers: Url.header).response { response in
                 if let data = response.data {
+                    self.tableView.stopAnimation()
                     let json = JSON(data)
                     let stats = TotalReportDM(totalReport: json["data"])
                     self.totalReport.append(stats)
                     self.confirmedCount.text = stats.confirmed.formatnumber()
                     self.activeCount.text = stats.active.formatnumber()
-//                    self.recovered.text = stats.recovered.formatnumber()
                     self.deathCount.text =  stats.deaths.formatnumber()
                     self.fatalityCount.text = String(format: "%.2f", stats.fatality_rate*100)+"%"
                     self.updateCount.text = "\(stats.updateDate)"
@@ -269,7 +273,6 @@ class StatisticsVC: UIViewController {
     
     func getData(){
         if Reachability.isConnectedToNetwork() {
-            
             AF.request(Url.regions, method: .get, encoding: JSONEncoding.default, headers: Url.header).response { response in
                 if let data = response.data {
                     let json = JSON(data)

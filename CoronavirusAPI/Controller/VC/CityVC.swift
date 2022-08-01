@@ -16,10 +16,12 @@ class CityVC: UIViewController {
     var province = RegionDM(region: "")
     var cities:[ReportDM] = []
     
-    let headerView: UIView = {
-        let v = UIView()
-        return v
-    }()
+//    let headerView: UIView = {
+//        let v = UIView()
+//        return v
+//    }()
+    @IBOutlet weak var headerView: UIView!
+    
     
     let countryLbl: UILabel = {
         let lbl = UILabel()
@@ -33,6 +35,7 @@ class CityVC: UIViewController {
     let confirmedLbl: UILabel = {
         let lbl = UILabel()
         lbl.text = "Confirmed"
+        lbl.textColor = .systemRed
         lbl.font = UIFont.systemFont(ofSize: 17, weight: .semibold)
         lbl.textAlignment = .center
         return lbl
@@ -41,6 +44,7 @@ class CityVC: UIViewController {
     let activeLbl: UILabel = {
         let lbl = UILabel()
         lbl.text = "Active"
+        lbl.textColor = .systemGreen
         lbl.font = UIFont.systemFont(ofSize: 17, weight: .semibold)
         lbl.textAlignment = .center
         return lbl
@@ -49,6 +53,7 @@ class CityVC: UIViewController {
     let deathLbl: UILabel = {
         let lbl = UILabel()
         lbl.text = "Death"
+        lbl.textColor = .label
         lbl.font = UIFont.systemFont(ofSize: 17, weight: .semibold)
         lbl.textAlignment = .center
         return lbl
@@ -76,7 +81,6 @@ class CityVC: UIViewController {
         didSet {
             tableView.delegate = self
             tableView.dataSource = self
-            tableView.tableHeaderView = headerView
             tableView.separatorStyle = .none
             tableView.contentInset = UIEdgeInsets(top: 10, left: 0, bottom: 10, right: 0)
             tableView.register(CityTVC.uinib(), forCellReuseIdentifier: CityTVC.identifier)
@@ -89,6 +93,7 @@ class CityVC: UIViewController {
         formatter.dateFormat = "yyyy-MM-dd"
         let date = formatter.string(from: Calendar.current.date(byAdding: .day, value: -1, to: Date())!)
         getData(date: date)
+        self.tableView.startAnimation(name: "waiting")
         setHeaderUI()
     }
     
@@ -101,6 +106,7 @@ class CityVC: UIViewController {
             ]
             AF.request(Url.reports, method: .get, parameters: params, headers: Url.header).response { response in
                 if let data = response.data {
+                    self.tableView.stopAnimation()
                     let json = JSON(data)
                     for i in json["data"].arrayValue{
                         let report = ReportDM(report: i)
@@ -110,16 +116,11 @@ class CityVC: UIViewController {
                 }
             }
         }else {
-            print("not connection")
+            print("no connection")
         }
     }
     
     func setHeaderUI() {
-        
-        self.headerView.snp.makeConstraints { make in
-//            make.left.top.right.equalTo(tableView).inset(8)
-            make.width.equalTo(self.tableView)
-        }
         
         self.headerView.addSubview(bigStackView)
         bigStackView.snp.makeConstraints { make in

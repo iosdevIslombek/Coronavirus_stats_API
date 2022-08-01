@@ -36,6 +36,10 @@
 		CEACD31B288FD9E600E97751 /* Url.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEACD31A288FD9E600E97751 /* Url.swift */; };
 		CEACD31D288FDFCE00E97751 /* CountryCodes.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEACD31C288FDFCE00E97751 /* CountryCodes.swift */; };
 		CEACD31F288FE00100E97751 /* IsoCountryInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEACD31E288FE00100E97751 /* IsoCountryInfo.swift */; };
+		CEB735E128979DBF00AC60C4 /* waiting.json in Resources */ = {isa = PBXBuildFile; fileRef = CEB735E028979DBF00AC60C4 /* waiting.json */; };
+		CEB735E72897AD7D00AC60C4 /* Ex+TableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB735E62897AD7D00AC60C4 /* Ex+TableView.swift */; };
+		CEB735E92897B0A700AC60C4 /* global.json in Resources */ = {isa = PBXBuildFile; fileRef = CEB735E82897B0A700AC60C4 /* global.json */; };
+		CEB735EB2897B3AD00AC60C4 /* no-internet.json in Resources */ = {isa = PBXBuildFile; fileRef = CEB735EA2897B3AC00AC60C4 /* no-internet.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -72,6 +76,10 @@
 		CEACD31A288FD9E600E97751 /* Url.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Url.swift; sourceTree = "<group>"; };
 		CEACD31C288FDFCE00E97751 /* CountryCodes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryCodes.swift; sourceTree = "<group>"; };
 		CEACD31E288FE00100E97751 /* IsoCountryInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IsoCountryInfo.swift; sourceTree = "<group>"; };
+		CEB735E028979DBF00AC60C4 /* waiting.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = waiting.json; sourceTree = "<group>"; };
+		CEB735E62897AD7D00AC60C4 /* Ex+TableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Ex+TableView.swift"; sourceTree = "<group>"; };
+		CEB735E82897B0A700AC60C4 /* global.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = global.json; sourceTree = "<group>"; };
+		CEB735EA2897B3AC00AC60C4 /* no-internet.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "no-internet.json"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,6 +115,9 @@
 			isa = PBXGroup;
 			children = (
 				CEA4ACE4288DA09C00488807 /* Assets.xcassets */,
+				CEB735E028979DBF00AC60C4 /* waiting.json */,
+				CEB735E82897B0A700AC60C4 /* global.json */,
+				CEB735EA2897B3AC00AC60C4 /* no-internet.json */,
 				CE71056C289026190007562C /* empty-list.json */,
 			);
 			path = Assets;
@@ -200,6 +211,7 @@
 				CEACD317288FBF4B00E97751 /* Ex+String.swift */,
 				CE68EF6A28919109003FF517 /* Ex+UIView.swift */,
 				CE68EF6C289256B6003FF517 /* Ex+Int.swift */,
+				CEB735E62897AD7D00AC60C4 /* Ex+TableView.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -316,12 +328,15 @@
 				CE71056D289026190007562C /* empty-list.json in Resources */,
 				CEA4ACE8288DA09C00488807 /* LaunchScreen.storyboard in Resources */,
 				CEA4ACE5288DA09C00488807 /* Assets.xcassets in Resources */,
+				CEB735E128979DBF00AC60C4 /* waiting.json in Resources */,
 				CEA4AD00288DA58D00488807 /* RegionsTVC.xib in Resources */,
+				CEB735E92897B0A700AC60C4 /* global.json in Resources */,
 				CE92F312288EB0E300974D72 /* ReportVC.xib in Resources */,
 				CE68EF7528926B3B003FF517 /* CityVC.xib in Resources */,
 				CE68EF6928918910003FF517 /* StatisticsVC.xib in Resources */,
 				CE68EF7128926295003FF517 /* CityTVC.xib in Resources */,
 				CE68EF792892AC54003FF517 /* MoreInfoVC.xib in Resources */,
+				CEB735EB2897B3AD00AC60C4 /* no-internet.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -374,6 +389,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CEB735E72897AD7D00AC60C4 /* Ex+TableView.swift in Sources */,
 				CE92F314288EE19100974D72 /* CityDM.swift in Sources */,
 				CE68EF6828918910003FF517 /* StatisticsVC.swift in Sources */,
 				CEA4AD06288DBD8F00488807 /* ProvinceDM.swift in Sources */,
